@@ -9,3 +9,8 @@ php artisan ui vue --auth
 npm install
 npm i vue-loader          
 npm run dev
+
+
+can refer to{
+    https://stackoverflow.com/questions/38602321/cloning-laravel-project-from-github
+}
