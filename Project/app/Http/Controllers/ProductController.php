@@ -83,15 +83,23 @@ class ProductController extends Controller
 
     public function viewProduct(){
 
-        
+        (new CartController)->cartItem();
         $products=Product::paginate(3);
         return view('viewProducts')->with('products',$products);
 
     }
 
 
+
+
     public function productdetail($id){
-        $products=Product::all()->where('id',$id);
+        $products=DB::table('products')
+        ->leftjoin('categories','categories.id','=','products.CategoryID')
+        ->select('products.*','categories.name as catName')
+        ->where('products.id',$id)
+        ->get();
+        
+        
         return view('productDetail')->with('products',$products);
     }
 

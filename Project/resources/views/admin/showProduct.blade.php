@@ -24,7 +24,7 @@
 
             <div class="table-responsive">
 
-                <table class="table table-bootdered text-dark" id="dataTable" width="100%" collspacing="0">
+                <table class="table table-bootdered text-dark" id="datatablesSimple" width="100%" collspacing="0">
                     <thead style="background-color: #EAEFF4;">
                         <tr class="text-dark">
 

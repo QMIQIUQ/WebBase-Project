@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Phone Shop</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
     <footer class="footer bg-dark">
         <div class="container">
             <div class="row">               
-                <div class="col-lg-12 text-center  my-auto ">                   
+                <div class="col-lg-12 text-center my-auto ">                   
                     <p class="mb-4 mb-lg-0">© SUC 2022. All Rights Reserved.</p>
                 </div>                
             </div>

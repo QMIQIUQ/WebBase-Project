@@ -15,7 +15,13 @@
                     <div class="card-heading text-dark">RM {{$product->price}}</div>
 
                     <a href="{{ route('product.detail', ['id' => $product->id]) }}" style="float:right" class="btn btn-warning btn-xs text-dark">Detail</a>
+
+                    <form action="{{route('add.to.cart')}}" method="post">
+                    @csrf
+                    <input type="hidden"  name="quantity" value="1">
+                    <input type="hidden" name="id" value="{{$product->id}}">
                     <button style="float:right" class="btn btn-danger btn-xs mr-2">Add to Cart</button>
+                    </form>
                 </div>
             </div>
         </div>

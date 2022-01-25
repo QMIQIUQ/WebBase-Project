@@ -38,9 +38,16 @@ Route::post('addCart',[App\Http\Controllers\CartController::class,'add'])
 Route::get('/myCart',[App\Http\Controllers\CartController::class, 'view'])
 ->name('myCart');
 
+Route::get('/delete-cart/{id}',[App\Http\Controllers\CartController::class, 'delete']);
+
 Route::post('\checkout', [App\Http\Controllers\PaymentController::class, 'paymentPost'])
 ->name('payment.post');
 
+Route::get('/myOrder', [App\Http\Controllers\OrderController::class, 'view'])
+->name('myOrder');
+
+Route::get('/pdfReport', [App\Http\Controllers\OrderController::class, 'pdfReport'])
+->name('pdfReport');
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -93,4 +100,20 @@ Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class
 ->name('deleteProduct');
 
 //end product
+
+
+// order
+
+Route::get('/viewOrder', [App\Http\Controllers\OrderController::class, 'AdminView']) 
+    ->name('viewOrder');
+
+Route::get('/editOrder/{id}', [App\Http\Controllers\OrderController::class, 'editOrder']) 
+    ->name('editOrder');
+
+ Route::post('/updateOrder', [App\Http\Controllers\OrderController::class, 'updateOrder']) 
+->name('updateOrder');
+
+    
+
+//end order
 });

@@ -33,23 +33,24 @@
     @csrf
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-6">
+        <div class="col-sm-8">
             <br><br>
-            <table class="table table-bordered">
+            <table class="table table-striped table-light">
                 <thead>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>Name &#128526;</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Subtotal</td>
+                        <td scope="col">&#128526;</td>
+                        <td scope="col">Name</td>
+                        <td scope="col">Price</td>
+                        <td scope="col">Quantity</td>
+                        <td scope="col">Subtotal</td>
+                        <td scope="col">&nbsp;</td>
 
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($products as $product)
                     <tr>
-                        <td>
+                        <td scope="row">
                             <input type="checkbox" name="cid[]" id="cid[]" value="{{$product->cid}}" onclick="cal()">
 
                             <input type="hidden" name="subtotal[]" id="subtotal[]" value="{{$product->price*$product->cartQty}}">
@@ -58,18 +59,21 @@
                         </td>
 
                         <td>{{$product->name}}</td>
-                        <td>{{$product->price}}</td>
+                        <td>RM {{$product->price}}</td>
                         <td>{{$product->cartQty}}</td>
                         <td>{{$product->price*$product->cartQty}}</td>
-
+                        <td>
+                            <a href="{{ url('delete-cart/'.$product->cid) }}" class="btn btn-sm btn-danger" >Remove</a>
+                        </td>
+                       
                     </tr>
                     @endforeach
 
                     <tr align="right">
 
-                        <td colspan="3">&nbsp;</td>
+                        <td colspan="4">&nbsp;</td>
 
-                        <td>RM<i> </i> <input type="text" value="0" name="sub" id="sub" size="7" readonly /></td>
+                        <td>RM<i> </i> <input class='form-control' type="text" value="0" name="sub" id="sub" size="7" readonly /></td>
 
                         <td>&nbsp;</td>
 
@@ -79,25 +83,45 @@
 
         </div>
 
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2"></div>
 
     </div>
 
     <div class="row">
         <div class="col-sm-2"></div>
-            <div class="col-sm-10">
+        <div class="col-sm-8">
             {{$products->links('pagination::bootstrap-4')}}
-            
+
         </div>
+
+        <div class="col-sm-2"></div>
     </div>
 
-    <div class="row">
+    <br>
+    <br>
+
+
+
+    <div class="container">
+
+    <div class="row bg-light ">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+            <h3 class="text-dark">Address</h3>
+            <input type="text" class='form-control mb-3' id="Address" name="Address" required1>
+            </div>
+            <div class="col-sm-2"></div>
+    </div>
+
+    <hr>
+
+    <div class="row bg-light">
         <div class="col-sm-2"></div>
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-sm-8 col-md-offset-3">
             <div class="panel panel-default credit-card-box">
-                <div class="panel-heading">
+                <div class="panel-heading mt-3">
                     <div class="row">
-                        <h3>Card Payment</h3>
+                        <h3 class="text-dark">Card Payment</h3>
 
                     </div>
                 </div>
@@ -107,25 +131,25 @@
 
                     <div class='form-row row'>
                         <div class='col-xs-12 col-md-6 form-group required'>
-                            <label class='control-label'>Name on Card</label>
+                            <label class='control-label text-dark'>Name on Card</label>
                             <input class='form-control' size='4' type='text'>
                         </div>
                         <div class='col-xs-12 col-md-6 form-group required'>
-                            <label class='control-label'>Card Number</label>
+                            <label class='control-label text-dark'>Card Number</label>
                             <input autocomplete='off' class='form-control card-number' size='20' type='text'>
                         </div>
                     </div>
                     <div class='form-row row'>
                         <div class='col-xs-12 col-md-4 form-group cvc required'>
-                            <label class='control-label'>CVC</label>
+                            <label class='control-label text-dark'>CVC</label>
                             <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'>
                         </div>
                         <div class='col-xs-12 col-md-4 form-group expiration required'>
-                            <label class='control-label'>Expiration Month</label>
+                            <label class='control-label text-dark'>Expiration Month</label>
                             <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text'>
                         </div>
                         <div class='col-xs-12 col-md-4 form-group expiration required'>
-                            <label class='control-label'>Expiration Year</label>
+                            <label class='control-label text-dark'>Expiration Year</label>
                             <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'>
                         </div>
                     </div>
@@ -136,7 +160,7 @@
                             </div>
                          </div>
                       </div> --}}
-                    <div class="form-row row">
+                    <div class="form-row row mb-3">
                         <div class="col-xs-12">
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now</button>
                         </div>
@@ -145,8 +169,12 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-2"></div>
+    </div>
+    </div>
 </form>
-</div>
+
 
 
 

@@ -28,9 +28,10 @@ class PaymentController extends Controller
 
         $newOrder=myOrder::create([
 
-            'paymentStatus' =>'Done', 
+            'paymentStatus' =>'Pending', 
             'userID' => Auth::id(),
             'amount' => $request->sub,
+            'address'=>$request->Address,
 
         ]);
 
@@ -43,6 +44,7 @@ class PaymentController extends Controller
             $carts->save();
         }
 
+        (new CartController)->cartItem();
         $email="limyonghau@gmail.com";
         Notification::route('mail',$email)->notify(new \App\Notifications\orderPaid($email));
         

@@ -77,6 +77,11 @@
                                 Product
                             </a>
 
+                            <a class="nav-link" href="{{ url('/viewOrder') }}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-th-list"></i></div>
+                                All Order
+                            </a>
+
 
 
                              
