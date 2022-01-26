@@ -35,8 +35,10 @@
         @csrf
         <div class="row">
             <div class="col-sm-2"></div>
+            
             <div class="col-sm-8">
                 <br><br>
+                
                 <table class="table table-striped table-light">
                     <thead>
                         <tr>
@@ -66,6 +68,7 @@
                             <td>{{$product->name}}</td>
                             <td>RM {{$product->price}}</td>
                             <td>{{$product->cartQty}}</td>
+                            <input type="hidden" name="qty" id="qty">
                             <td>{{$product->price*$product->cartQty}}</td>
                             <td>
                                 <a href="{{ url('delete-cart/'.$product->cid) }}"
@@ -105,8 +108,8 @@
             <div class="row bg-light ">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <h3 class="text-dark">Address</h3>
-                    <input type="text" class='form-control mb-3' id="Address" name="Address" required1>
+                    <h3 class="text-dark">Enter Your Address</h3>
+                    <input type="text" class='form-control mb-3' id="Address" name="Address" required>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
@@ -170,7 +173,9 @@
                     </div>
                 </div>
 
-                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+
+                </div>
             </div>
         </div>
     </form>

@@ -54,17 +54,21 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="{{ url('myOrder') }}">My Order</a></li>
+            @if (Auth::user()->role_as == 1)
             <li>
               <hr class="dropdown-divider" />
             </li>
+
             <li><a class="dropdown-item" href="{{url('/dashboard')}}">
-                @if (Auth::user()->role_as == 1)
+
                 Admin Dashboard
-                @endif
+
               </a></li>
             <li>
+
               <hr class="dropdown-divider" />
             </li>
+            @endif
             <li>
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

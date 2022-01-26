@@ -65,7 +65,7 @@ class ProductController extends Controller
             $products->quantity=$r->productQuantity;
             $products->CategoryID=$r->CategoryID;
             $products->save();
-        
+            
 
         // Session::flash('success',"Product update successfully");
 
