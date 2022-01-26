@@ -84,7 +84,7 @@ class ProductController extends Controller
     public function viewProduct(){
 
         (new CartController)->cartItem();
-        $products=Product::paginate(3);
+        $products=Product::paginate(6);
         return view('viewProducts')->with('products',$products);
 
     }
