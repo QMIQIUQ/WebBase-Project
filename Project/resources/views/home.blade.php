@@ -1,6 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
 <header id="home">
 
 
@@ -44,7 +45,7 @@
                         <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
                             <img src="images/samsung.jpg" width="250px" height="200px">
                         </div>
-                       <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
+                       <div class="col-md-6 col-lg-3 wow bounceInUp img-fluid" data-wow-duration="1.4s">
                             <img src="images/huawei.png" width="280px" height="200px">
                         </div>
                        <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">

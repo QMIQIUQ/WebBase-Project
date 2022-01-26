@@ -84,11 +84,38 @@ class ProductController extends Controller
     public function viewProduct(){
 
         (new CartController)->cartItem();
-        $products=Product::paginate(6);
+        $products=Product::paginate(8);
         return view('viewProducts')->with('products',$products);
 
     }
+    
+    public function show(){
+   
+        $categories=Category::all();
+        if (request()->category) {
+            $products=DB::table('phones')
+            ->select('phones.*')
+            ->where('phones.CategoryID','=',request()->category)
+            ->paginate(9);
 
+
+            $categoryNames=DB::table('categories')
+            ->select('categories.*')
+            ->where('categories.id','=',request()->category)
+            ->get();
+            
+        }else {
+            $products=Phone::paginate(9);
+            $categoryNames=null;
+        }
+        
+        return view('userShowPhone')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'categoryName'=>$categoryNames,
+        ]);
+        
+    }
 
 
 
@@ -102,6 +129,7 @@ class ProductController extends Controller
         
         return view('productDetail')->with('products',$products);
     }
+    
 
     public function searchProduct(){
         $r=request();

@@ -1,3 +1,9 @@
+<style>
+  a{
+  decoration:none;
+}
+</style>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -10,7 +16,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
-  <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+  
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
@@ -19,6 +25,7 @@
 <style>
   body {
     padding-top: 65px;
+    background-color:#acd2f8;
   }
 
 </style>
