@@ -116,4 +116,16 @@ Route::get('/editOrder/{id}', [App\Http\Controllers\OrderController::class, 'edi
     
 
 //end order
+//user
+
+Route::get('/viewUser', [App\Http\Controllers\UserController::class, 'UserView']) 
+    ->name('viewUser');
+
+Route::get('/editUser/{id}', [App\Http\Controllers\UserController::class, 'editUser']) 
+    ->name('editUser');
+
+Route::post('/updateUser', [App\Http\Controllers\UserController::class, 'updateUser']) 
+    ->name('updateUser');
+
+    //end user
 });
