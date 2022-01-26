@@ -4,6 +4,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 h1,h2,h3,h4,h5,h6{margin:0;}
 body {
@@ -521,9 +522,16 @@ section.contact-wrap{
 
 
 /* Footer */
-footer.footer{padding:4rem 0;}
+/* footer.footer{
+    position:absolute;
+     padding:2rem 0;
+     bottom:0;
+   width:100%;
+   
+
+    }
 footer.footer ul li a{color: #ffffff;text-decoration: none;}
-footer.footer p{color:#dcdcdc;}
+footer.footer p{color:#dcdcdc;} */
 
 
 /***responsive---/

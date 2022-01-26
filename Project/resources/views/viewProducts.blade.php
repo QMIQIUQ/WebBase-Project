@@ -20,7 +20,7 @@
                     @csrf
                     <input type="hidden"  name="quantity" value="1">
                     <input type="hidden" name="id" value="{{$product->id}}">
-                    <button style="float:right" class="btn btn-danger btn-xs mr-2">Add to Cart</button>
+                    <button style="float:right;margin-right:10px;" class="btn btn-danger btn-xs mr-2">Add to Cart</button>
                     </form>
                 </div>
             </div>
