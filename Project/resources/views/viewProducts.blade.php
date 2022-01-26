@@ -3,7 +3,15 @@
 
 
 <div class="container">
+    <div class="nav-item">
 
+        <form class="d-flex" action="{{route('search.products')}}" method="POST">
+          @csrf
+          <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
+    </div>
     <div class="row">
         @foreach($products as $product)
         <div class="col-sm-4 mt-3 mb-3">

@@ -1,6 +1,6 @@
 
-  <div class="overlay">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="{{ url('/') }}">Phone Shop</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,15 +21,7 @@
 
 
         
-          <li class="nav-item">
-
-            <form class="d-flex" action="{{route('search.products')}}" method="POST">
-              @csrf
-              <input class="form-control me-2" name="keyword" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-
-          </li>
+          
 
           @guest
           @else
@@ -81,7 +73,7 @@
       </div>
     </div>
   </nav>
-</div>
+
 
  
 

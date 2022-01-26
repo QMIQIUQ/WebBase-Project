@@ -16,11 +16,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" />
 
 </head>
+<style>
+  body {
+    padding-top: 65px;
+  }
 
-<body>
+</style>
+
+<body class="d-flex flex-column min-vh-100">
   <div>
     @include('layouts.inc.navbar')
-    
+
     @yield('content')
   </div>
 
@@ -29,13 +35,15 @@
 
 
 
-<footer class="page-footer bg-dark text-center text-lg-start p-3">
-  <div class="text-center p-3 text-light">
-    © SUC 2022
-    <a class="text-light" href="#">All Rights Reserved.</a>
-  </div>
-</footer>
+  <footer  class="mt-auto footer-classic bg-dark  text-lg-start p-3">
+    <div class="text-center p-3 text-light">
+      © SUC 2022
+      <a class="text-light" href="#">All Rights Reserved.</a>
+    </div>
+  </footer>
+
 </body>
+
 
 
 
