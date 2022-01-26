@@ -81,22 +81,16 @@ class ProductController extends Controller
         return redirect()->route('viewProduct');
     }
 
+
+
     public function viewProduct(){
-
         (new CartController)->cartItem();
-        $products=Product::paginate(8);
-        return view('viewProducts')->with('products',$products);
-
-    }
-    
-    public function show(){
-   
         $categories=Category::all();
         if (request()->category) {
-            $products=DB::table('phones')
-            ->select('phones.*')
-            ->where('phones.CategoryID','=',request()->category)
-            ->paginate(9);
+            $products=DB::table('products')
+            ->select('products.*')
+            ->where('products.CategoryID','=',request()->category)
+            ->paginate(8);
 
 
             $categoryNames=DB::table('categories')
@@ -105,11 +99,12 @@ class ProductController extends Controller
             ->get();
             
         }else {
-            $products=Phone::paginate(9);
+            $products=Product::paginate(8);
             $categoryNames=null;
         }
         
-        return view('userShowPhone')->with([
+
+        return view('viewProducts')->with([
             'products'=>$products,
             'categories'=>$categories,
             'categoryName'=>$categoryNames,
@@ -131,10 +126,18 @@ class ProductController extends Controller
     }
     
 
+    
     public function searchProduct(){
+        $categories=Category::all();
+        $categoryNames=null;
         $r=request();
         $keyword=$r->keyword;
-        $products=DB::table('products')->where('name','like','%'.$keyword.'%')->paginate();
-        return view('viewProducts')->with('products',$products);
+        $products=DB::table('products')->where('name','like','%'.$keyword.'%')->paginate(8);
+
+        return view('viewProducts')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'categoryName'=>$categoryNames,
+            ]);
     }
 }
