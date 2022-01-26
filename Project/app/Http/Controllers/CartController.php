@@ -42,8 +42,8 @@ class CartController extends Controller
 
         ->where('my_carts.userID','=',Auth::id())
 
-        //->get();
-        ->paginate(4);
+        ->get();
+  
 
         //select my_carts.quantity as cartQty,my_carts.id as cid, products.* from my_carts left join products on products.id=my_carts.productID where my_cart.orderID='' and my_carts.userID='Auth::id()'    
 

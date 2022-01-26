@@ -1,6 +1,8 @@
 @extends('layouts.frontend')
 
 @section('content')
+<header id="home">
+
 
 <div class="card-body text-dark">
     @if (session('status'))
