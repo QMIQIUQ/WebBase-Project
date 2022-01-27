@@ -31,7 +31,7 @@
 </div>
 
 <div class="form-group mb-3">
-<label for="addOrder">User Name</label>   
+<label for="addOrder">Payment Status</label>   
 
 
 @if($order->paymentStatus == 'Done')
