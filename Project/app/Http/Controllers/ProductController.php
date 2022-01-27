@@ -90,7 +90,7 @@ class ProductController extends Controller
             $products=DB::table('products')
             ->select('products.*')
             ->where('products.CategoryID','=',request()->category)
-            ->paginate(8);
+            ->paginate();
 
 
             $categoryNames=DB::table('categories')

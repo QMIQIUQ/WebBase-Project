@@ -262,7 +262,7 @@
 
             <div class="row">
                 @foreach($products as $product)
-                <div class="col col-md-3">
+                <div class="col col-md-3 p-2">
                     <div class="card h-100 ">
 
                         <div class="card-body">
@@ -297,17 +297,19 @@
                 </div>
                 @endforeach
             </div>
+            
+            <div class="row p-4">
+                <div class="col-md-5"></div>
+                <div class="co1-sm-4">{{$products->links('pagination::bootstrap-4')}}</div>
+                <div class="col-md-3"></div>
+            </div>
         </div>
 
 
 
 
 
-        <div class="row">
-            <div class="col-md-5"></div>
-            <div class="co1-sm-4">{{$products->links('pagination::bootstrap-4')}}</div>
-            <div class="col-md-3"></div>
-        </div>
+        
 
 
 
