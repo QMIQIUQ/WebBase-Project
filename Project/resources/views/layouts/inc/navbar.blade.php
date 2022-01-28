@@ -13,7 +13,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{{ url('home') }}">Home <i class="fas fa-home"></i></a>
+          <a class="nav-link active" href="{{ url('/') }}">Home <i class="fas fa-home"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('product') }}">Product <i class="fas fa-shopping-bag"></i></a>
