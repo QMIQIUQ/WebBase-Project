@@ -121,12 +121,14 @@
                                     </div>
                                 </div>
                                 <p class="about">Description :{{$product->description}}</p>
+                                
                                 <div class="sizes mt-5">
-                                    <h6 class="text-uppercase">Quantity :</h6>
-
-                                    <input type="number" min="1" max="{{$product->quantity}}" name="quantity" id=""
-                                        required>
                                     <h6 class="text-uppercase"> Available stock :{{$product->quantity}}</h6>
+                                    <h6 class="text-uppercase">Select Quantity : <input type="number" min="1" max="{{$product->quantity}}" name="quantity" id=""
+                                        required></h6>
+
+                                    
+                                   
 
 
                                 </div>

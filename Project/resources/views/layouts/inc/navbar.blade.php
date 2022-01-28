@@ -26,7 +26,7 @@
         @guest
         @else
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('myCart') }}"><i class="fas fa-cart-plus"></i><span
+          <a class="nav-link" href="{{ url('myCart') }}">My Cart <i class="fas fa-cart-plus"></i><span
               class="badge bg-danger">{{Session()->get('cartItem')}}</span></a>
         </li>
         @endguest
