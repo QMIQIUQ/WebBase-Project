@@ -13,7 +13,7 @@
 
 
         <li class="nav-item">
-          <a class="nav-link active" href="{{ url('home') }}">Home <i class="fas fa-home"></i></a>
+          <a class="nav-link active" href="{{ url('/') }}">Home <i class="fas fa-home"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('product') }}">Product <i class="fas fa-shopping-bag"></i></a>
@@ -26,7 +26,7 @@
         @guest
         @else
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('myCart') }}"><i class="fas fa-cart-plus"></i><span
+          <a class="nav-link" href="{{ url('myCart') }}">My Cart <i class="fas fa-cart-plus"></i><span
               class="badge bg-danger">{{Session()->get('cartItem')}}</span></a>
         </li>
         @endguest

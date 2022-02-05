@@ -24,7 +24,7 @@
                         <tr class="text-dark">
 
                             <td>Order ID</td>
-                            <td>Payment Status &#128526;</td>
+                            <td>Status &#128526;</td>
                             <td>Amount</td>
 
                         </tr>
